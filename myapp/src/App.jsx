@@ -54,7 +54,7 @@ function App() {
   }
   return (
     <div class="main-section">
-      <div class = "sub-section">
+      <div class="sub-section">
         <h1 id='hading'>Student Data Entry</h1>
         <div class="container">
           <form onSubmit={handleSubmit} class="form-section">
@@ -123,9 +123,9 @@ function App() {
                 className='input'
                 onChange={(e) => handleSubject("m5", e.target.value)} />
             </div>
-            <button type='submit' className='btn'>{data.id ? "Updata" : "Submit" }</button>
+            <button type='submit' className='btn'>{data.id ? "Updata" : "Submit"}</button>
             <div>
-              <div className='pre'>{marks}</div>
+              <div className='pre'>{marks}%</div>
               <div>
                 {
                   marks >= 60 ? (<h5 lassName='pre'>First Division</h5>) : (<h5 lassName='pre'>Fail</h5>)
@@ -160,8 +160,12 @@ function App() {
                       <td className="px-4 py-2 border">{data.subjects.m3}</td>
                       <td className="px-4 py-2 border">{data.subjects.m4}</td>
                       <td className="px-4 py-2 border">{data.subjects.m5}</td>
-                      <td className="px-4 py-2 border">{pre}</td>
-                      <td className="px-4 py-2 border"></td>
+                      <td className="px-4 py-2 border">{pre}%</td>
+                      <td className="px-4 py-2 border">
+                        {
+                          pre >= 60 ? (<h5 lassName='pre'>First Division</h5>) : (<h5 lassName='pre'>Fail</h5>)
+                        }
+                      </td>
                       <td className="px-4 py-2 border">
                         <button className='btn2' onClick={() => handleEdit(data)}>Edit</button>
                       </td>
